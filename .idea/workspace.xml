@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f2687e8-1f8d-4e86-98b7-e3487c39333f" name="Default Changelist" comment="" />
+    <list default="true" id="2f2687e8-1f8d-4e86-98b7-e3487c39333f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/SimpleAutoAnnouncer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/SimpleAutoAnnouncer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Announcer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Announcer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/message/Message.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +37,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -44,6 +53,7 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1ZsdzzOlsL6G9AwNfAbnnr3MP28" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -55,6 +65,7 @@
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../APIs/BuildTools.jar!/" />
@@ -103,7 +114,8 @@
       <updated>1585632002007</updated>
       <workItem from="1585632005483" duration="304000" />
       <workItem from="1585632332815" duration="635000" />
-      <workItem from="1585638474187" duration="2749000" />
+      <workItem from="1585638474187" duration="4107000" />
+      <workItem from="1585653698943" duration="1880000" />
     </task>
     <servers />
   </component>
@@ -119,22 +131,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585638685719" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585639103603">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1585648128061">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585639103603" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585639103603">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585648128061" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1585648128060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585639103603" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585639103603">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585648128060" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1585648128060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585639103603" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585639103603">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585648128060" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1585648128060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585639103603" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585648128060" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1585638622687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -151,6 +163,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="664" y="413" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1920.1040@0.0.1920.1040" timestamp="1585639000129" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1585657165114">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585657165114" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585641359989">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

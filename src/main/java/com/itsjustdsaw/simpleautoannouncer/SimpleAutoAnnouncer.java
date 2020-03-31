@@ -1,6 +1,6 @@
 package com.itsjustdsaw.simpleautoannouncer;
 
-import com.itsjustdsaw.simpleautoannouncer.message.Message;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -9,7 +9,7 @@ import java.util.List;
 
 public final class SimpleAutoAnnouncer extends JavaPlugin {
 
-    private List<Message> messages = new ArrayList<Message>();
+    private List<String> messages = new ArrayList<String>();
 
     private void loadPlugin(){
         //PlayerJoinMessage playerJoin = new PlayerJoinMessage(this);
@@ -19,22 +19,33 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
     @Override
     public void onEnable() {
         loadConfig();
-        checkMessages();
-
+        fetchMessages();
+        startupPrompt();
     }
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        System.out.println("Thanks For Using Simple Auto-Announcer");
     }
 
-    public void checkMessages(){
-        System.out.println("=======================================================");
+    private void fetchMessages(){
+        messages = getConfig().getStringList("Messages");
+    }
 
+    private void startupPrompt(){
+        System.out.println("=======================================================");
+        System.out.println("Fetched ");
+        if(messages.size() > 0){
+            System.out.print(ChatColor.GREEN + "" + messages.size());
+        }else{
+            System.out.print(ChatColor.RED + "" + messages.size());
+        }
+        System.out.print(" Messages From The Config");
         System.out.println("=======================================================");
     }
 
-    public void loadConfig(){
+
+    private void loadConfig(){
         final FileConfiguration config = this.getConfig();
         getConfig().options().copyDefaults(true);
         //Placeholders
