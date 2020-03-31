@@ -1,0 +1,7 @@
+name: SimpleAutoAnnouncer
+version: ${project.version}
+main: com.itsjustdsaw.simpleautoannouncer.SimpleAutoAnnouncer
+api-version: 1.13
+load: STARTUP
+authors: [ItsJustDsAW]
+description: Simple, Fast & Efficient Auto Announcer

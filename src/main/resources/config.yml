@@ -1,0 +1,27 @@
+# Plugin Created By JAhimaz | ItsJustDsAW
+
+############################################################
+# +------------------------------------------------------+ #
+# |               = SIMPLE AUTO-ANNOUNCER =              | #
+# |                     VERSION 1.0.0                    | #
+# +------------------------------------------------------+ #
+############################################################
+
+# For MineCraft Colour Codes Check Out https://www.colorschemer.com/minecraft-color-codes/
+
+# Plugin Prefix
+plugin-prefix: "&3[Announcer]"
+
+# Delay Per Message (Seconds)
+message-delay: 5
+
+# Messages Randomised (If "false", Will Be In Order Below)
+randomised: true
+
+# Messages
+Messages:
+  - "&bTest Message 1"
+  - "&dTest Message 2"
+  - "&eTest Message 3"
+
+# =================== END OF CONFIG =====================
