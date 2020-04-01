@@ -12,7 +12,7 @@ import java.util.List;
 public final class SimpleAutoAnnouncer extends JavaPlugin {
 
     private List<String> messages = new ArrayList<String>();
-    Announcer announcer;
+    private Announcer announcer;
 
     private void loadPlugin(){
         //PlayerJoinMessage playerJoin = new PlayerJoinMessage(this);

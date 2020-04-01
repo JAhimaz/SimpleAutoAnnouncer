@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.event.server.ServerLoadEvent;
+import org.bukkit.scheduler.BukkitTask;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ public class Announcer{
     private FileConfiguration config;
     private String prefix;
     private int delay;
+    private BukkitTask curr;
 
     public Announcer(SimpleAutoAnnouncer instance, List<String> messageList) {
         this.plugin = instance;
@@ -25,16 +27,11 @@ public class Announcer{
         delay = (plugin.getConfig().getInt("message-delay")*20);
     }
 
-    public void startAnnouncer(){
-        //First Test Announcement
-        Bukkit.getScheduler().runTaskLater (plugin, () -> this.plugin.getServer().broadcastMessage(prefix + " " + ChatColor.GREEN + "Test Announcement (Will Only Run Once On Server Startup"), 120);
-
-        //Check If Randomised Or Ordered
-        if(config.getBoolean("randomised")){
-        
-        }else{
-
-        }
+    public void stopAnnouncer(){
+        curr.cancel();
     }
 
+    public void startAnnouncer(){
+        curr = new Announcement(plugin, messages, config.getBoolean("plugin-enabled")).runTaskTimer(plugin,  0, delay);
+    }
 }

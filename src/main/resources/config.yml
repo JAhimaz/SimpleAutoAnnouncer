@@ -9,11 +9,14 @@
 
 # For MineCraft Colour Codes Check Out https://www.colorschemer.com/minecraft-color-codes/
 
+# Toggle The Announcer
+plugin-enabled: true
+
 # Plugin Prefix
 announcer-prefix: "&8&l[&bAnnouncer&8&l]"
 
 # Delay Per Message (Seconds)
-message-delay: 5
+message-delay: 20
 
 # Messages Randomised (If "false", Will Be In Order Below)
 randomised: true
