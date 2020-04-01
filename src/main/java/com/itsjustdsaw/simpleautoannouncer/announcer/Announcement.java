@@ -31,7 +31,7 @@ public class Announcement extends BukkitRunnable {
         if(plugin.getConfig().getBoolean("randomised")){
             plugin.getServer().broadcastMessage(getRandomString(messages));
         }else{
-            if(counter == (messages.size() - 1)){
+            if(counter == (messages.size())){
                 counter = 0;
             }
             plugin.getServer().broadcastMessage(messages.get(counter));
