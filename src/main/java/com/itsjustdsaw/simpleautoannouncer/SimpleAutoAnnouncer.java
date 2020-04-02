@@ -40,9 +40,7 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
     }
 
     private void setupAnnouncer(){
-        for(String key : getConfig().getConfigurationSection("Messages").getKeys(false)){
-            messages.add(new Message(key, getConfig().getStringList("Messages." + key)));
-        }
+        messageFetcher();
         //Create The Announcer Object
         announcer = new Announcer(this, messages);
     }
@@ -82,10 +80,10 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
                     }else if(args[0].equalsIgnoreCase("toggle")){
                         if(announcer.curr != null){
                             announcer.stopAnnouncer();
-                            System.out.println("Announcements Disabled");
+                            System.out.println(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + ChatColor.GREEN + " Announcements Disabled");
                         }else if(announcer.curr == null){
                             announcer.startAnnouncer();
-                            System.out.println("Announcements Enabled");
+                            System.out.println(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + ChatColor.GREEN + " Announcements Enabled");
                         }
                     }else if(args[0].equalsIgnoreCase("aliases")){
                         System.out.println(ChatColor.AQUA + "\n==========================================");
@@ -120,10 +118,10 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
                     }else if(args[0].equalsIgnoreCase("toggle")){
                         if(announcer.curr != null){
                             announcer.stopAnnouncer();
-                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + " Announcements Disabled");
+                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + ChatColor.GREEN + " Announcements Disabled");
                         }else if(announcer.curr == null){
                             announcer.startAnnouncer();
-                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + " Announcements Enabled");
+                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + ChatColor.GREEN + " Announcements Enabled");
                         }
                     }else if(args[0].equalsIgnoreCase("aliases")){
                         player.sendMessage(ChatColor.AQUA + "\n==========================================");
@@ -148,7 +146,30 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
         return true;
     }
 
+    private void messageFetcher(){
+        for(String key : getConfig().getConfigurationSection("Messages").getKeys(false)){
+            int validLines = 0;
+            List<String> messageList = getConfig().getStringList("Messages." + key);
+            if(messageList.size() <= 10 && messageList.size() > 0){
+                for(String line : messageList){
+                    if(!line.equals("")){
+                        validLines += 1;
+                    }
+                }
+                if(validLines > 0){
+                    messages.add(new Message(key, getConfig().getStringList("Messages." + key)));
+                }else{
+                    System.out.println(ChatColor.translateAlternateColorCodes('&',getConfig().getString("announcer-prefix") + " " + ChatColor.RED + key + " Is An Invalid Announcement (Skipping)"));
+                }
+            }
+            else{
+                System.out.println(ChatColor.translateAlternateColorCodes('&',getConfig().getString("announcer-prefix") + " " + ChatColor.RED + key + " Is An Invalid Announcement (Skipping)"));
+            }
+        }
+    }
+
     private void reloadPlugin(){
+        messages.clear();
         if(announcer != null){
             announcer.stopAnnouncer();
             announcer = null;

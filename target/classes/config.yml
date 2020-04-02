@@ -8,6 +8,7 @@
 ############################################################
 
 # For MineCraft Colour Codes Check Out https://www.colorschemer.com/minecraft-color-codes/
+# For Cool Symbols To Decorate Your text Check Out https://coolsymbol.com/
 
 # Toggle The Announcer
 plugin-enabled: true
@@ -16,20 +17,35 @@ plugin-enabled: true
 announcer-prefix: "&8&l[&bAnnouncer&8&l]"
 
 # Delay Per Message (Seconds)
-message-delay: 20
+message-delay: 360
 
 # Messages Randomised (If "false", Will Be In Order Below)
-randomised: true
+randomised: false
 
-# Messages
+# Max 10 Lines per announcement
+# No blank announcements (Will skip over)
+# Each line can go
+# NON BOLDED: 53 Characters
+# BOLDED (&l): 45 Characters
+#
+#
+# To create your own do as below
+# Example1:
+#   - "Line1"
+#   - "Line2"
+#   ...
+#   - "Line10"
+
 Messages:
   testmessage1:
-    - "L1"
-    - "L2"
-    - "L3"
+    - "&8+---------------------------------------------------+"
+    - ""
+    - "&f&l              THIS IS A TEST &a&lANNOUNCEMENT             "
+    - ""
+    - "&8+---------------------------------------------------+"
   testmessage2:
-    - "T1"
-    - "T2"
-    - "T3"
+    - "&8+---------------------------------------------------+"
+    - "&f&l              THIS IS A TEST &a&lANNOUNCEMENT             "
+    - "&8+---------------------------------------------------+"
 
 # =================== END OF CONFIG =====================

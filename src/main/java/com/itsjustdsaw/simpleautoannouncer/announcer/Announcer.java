@@ -37,6 +37,6 @@ public class Announcer{
     }
 
     public void startAnnouncer(){
-        curr = new Announcement(plugin, messages, config.getBoolean("plugin-enabled")).runTaskTimer(plugin,  0, delay);
+        curr = new Announcement(plugin, messages, config.getBoolean("plugin-enabled")).runTaskTimerAsynchronously(plugin,  0, delay);
     }
 }

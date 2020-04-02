@@ -4,10 +4,10 @@
     <list default="true" id="2f2687e8-1f8d-4e86-98b7-e3487c39333f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/SimpleAutoAnnouncer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/SimpleAutoAnnouncer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Announcement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Announcement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Announcer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Announcer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itsjustdsaw/simpleautoannouncer/announcer/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/simpleautoannouncer/SimpleAutoAnnouncer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/simpleautoannouncer/SimpleAutoAnnouncer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/simpleautoannouncer/announcer/Announcer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itsjustdsaw/simpleautoannouncer/announcer/Announcer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/original-simpleautoannouncer-1.0.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/original-simpleautoannouncer-1.0.0.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/simpleautoannouncer-1.0.0-shaded.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/simpleautoannouncer-1.0.0-shaded.jar" afterDir="false" />
@@ -122,7 +122,7 @@
       <workItem from="1585638474187" duration="4107000" />
       <workItem from="1585653698943" duration="6512000" />
       <workItem from="1585734387479" duration="6996000" />
-      <workItem from="1585804833821" duration="10761000" />
+      <workItem from="1585804833821" duration="17299000" />
     </task>
     <servers />
   </component>
@@ -142,22 +142,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="666" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585638685719" />
-    <state width="1877" height="203" key="GridCell.Tab.0.bottom" timestamp="1585817447598">
+    <state width="1877" height="203" key="GridCell.Tab.0.bottom" timestamp="1585824375266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585817447598" />
-    <state width="1877" height="203" key="GridCell.Tab.0.center" timestamp="1585817447598">
+    <state width="1877" height="203" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1585824375266" />
+    <state width="1877" height="203" key="GridCell.Tab.0.center" timestamp="1585824375266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585817447598" />
-    <state width="1877" height="203" key="GridCell.Tab.0.left" timestamp="1585817447598">
+    <state width="1877" height="203" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1585824375266" />
+    <state width="1877" height="203" key="GridCell.Tab.0.left" timestamp="1585824375266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585817447598" />
-    <state width="1877" height="203" key="GridCell.Tab.0.right" timestamp="1585817447598">
+    <state width="1877" height="203" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1585824375266" />
+    <state width="1877" height="203" key="GridCell.Tab.0.right" timestamp="1585824375266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585817447598" />
+    <state width="1877" height="203" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1585824375266" />
     <state x="490" y="174" key="Maven.ArtifactSearchDialog" timestamp="1585638622687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -178,9 +178,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585816608201" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585752286890">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1585820029212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585752286890" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1585820029212" />
   </component>
 </project>
