@@ -16,7 +16,7 @@ public class Announcer{
     private FileConfiguration config;
     private String prefix;
     private int delay;
-    private BukkitTask curr;
+    public BukkitTask curr;
 
     public Announcer(SimpleAutoAnnouncer instance, List<String> messageList) {
         this.plugin = instance;
@@ -28,7 +28,12 @@ public class Announcer{
     }
 
     public void stopAnnouncer(){
-        curr.cancel();
+        if(curr != null){
+            curr.cancel();
+            curr = null;
+            return;
+        }
+        System.out.println("No Announcer Is Running");
     }
 
     public void startAnnouncer(){

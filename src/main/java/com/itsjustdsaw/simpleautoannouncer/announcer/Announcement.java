@@ -1,6 +1,7 @@
 package com.itsjustdsaw.simpleautoannouncer.announcer;
 
 import com.itsjustdsaw.simpleautoannouncer.SimpleAutoAnnouncer;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.scheduler.BukkitRunnable;
 
@@ -29,12 +30,12 @@ public class Announcement extends BukkitRunnable {
 
         //Announcer Code
         if(plugin.getConfig().getBoolean("randomised")){
-            plugin.getServer().broadcastMessage(getRandomString(messages));
+            plugin.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("announcer-prefix") + " " +  getRandomString(messages)));
         }else{
             if(counter == (messages.size())){
                 counter = 0;
             }
-            plugin.getServer().broadcastMessage(messages.get(counter));
+            plugin.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("announcer-prefix") + " " +  messages.get(counter)));
             counter++;
         }
     }

@@ -3,7 +3,11 @@ package com.itsjustdsaw.simpleautoannouncer;
 import com.itsjustdsaw.simpleautoannouncer.announcer.Announcer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -14,22 +18,19 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
     private List<String> messages = new ArrayList<String>();
     private Announcer announcer;
 
-    private void loadPlugin(){
-        //PlayerJoinMessage playerJoin = new PlayerJoinMessage(this);
-        //getServer().getPluginManager().registerEvents(playerJoin, this);
-    }
-
     @Override
     public void onEnable() {
         loadConfig();
-        setupAnnouncer();
-        startupPrompt();
-        Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable(){
-            @Override
-            public void run(){
-                announcer.startAnnouncer();
-            }
-        });
+        if(getConfig().getBoolean("plugin-enabled")){
+            Bukkit.getScheduler().scheduleSyncDelayedTask(this, new Runnable(){
+                @Override
+                public void run(){
+                    setupAnnouncer();
+                    startupPrompt();
+                    announcer.startAnnouncer();
+                }
+            });
+        }
     }
 
     @Override
@@ -61,5 +62,100 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
         getConfig().options().copyDefaults(true);
         //Placeholders
         saveDefaultConfig();
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if(command.getName().equals("simpleautoannouncer")){
+
+            //CONSOLE COMMANDS
+
+            if(sender instanceof ConsoleCommandSender){
+                if(args.length == 0){
+                    System.out.println("Invalid Arguments! Do saa help");
+                }else if (args.length == 1){
+                    if (args[0].equalsIgnoreCase("reload")) {
+                        reloadPlugin();
+                        System.out.println(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + " Reloaded The Config!");
+                    }else if(args[0].equalsIgnoreCase("toggle")){
+                        if(announcer.curr != null){
+                            announcer.stopAnnouncer();
+                            System.out.println("Announcements Disabled");
+                        }else if(announcer.curr == null){
+                            announcer.startAnnouncer();
+                            System.out.println("Announcements Enabled");
+                        }
+                    }else if(args[0].equalsIgnoreCase("aliases")){
+                        System.out.println(ChatColor.AQUA + "\n==========================================");
+                        System.out.println(ChatColor.AQUA + "\nALIASES:");
+                        System.out.println(ChatColor.AQUA + "\nSAA | SimpleAutoAnnouncer | Announcer");
+                        System.out.println(ChatColor.AQUA + "\n==========================================");
+                    } else if (args[0].equalsIgnoreCase("help")) {
+                        System.out.println(ChatColor.AQUA + "\n==========================================");
+                        System.out.println(ChatColor.AQUA + "/saa start");
+                        System.out.println(ChatColor.AQUA + "/saa stop");
+                        System.out.println(ChatColor.AQUA + "/saa reload");
+                        System.out.println(ChatColor.AQUA + "/saa help");
+                        System.out.println(ChatColor.AQUA + "/saa aliases");
+                        System.out.println(ChatColor.AQUA + "==========================================\n");
+                    }
+                }
+            }
+
+            //PLAYER COMMANDS
+
+            if(sender instanceof Player){
+                Player player = (Player) sender;
+                if(args.length == 0){
+                    player.sendMessage("Invalid Arguments, Try Doing /saa help");
+                }
+                else if(args.length == 1){
+                    if (args[0].equalsIgnoreCase("reload") && player.hasPermission("saa.reload")) {
+                        reloadPlugin();
+                        player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + " Reloaded The Config!");
+                    }else if(args[0].equalsIgnoreCase("reload") && !(player.hasPermission("saa.reload"))){
+                        player.sendMessage(ChatColor.RED + "Sorry, You Don't Have Permission To Access That Command!");
+                    }else if(args[0].equalsIgnoreCase("toggle")){
+                        if(announcer.curr != null){
+                            announcer.stopAnnouncer();
+                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + " Announcements Disabled");
+                        }else if(announcer.curr == null){
+                            announcer.startAnnouncer();
+                            player.sendMessage(ChatColor.translateAlternateColorCodes('&', getConfig().getString("announcer-prefix")) + " Announcements Enabled");
+                        }
+                    }else if(args[0].equalsIgnoreCase("aliases")){
+                        player.sendMessage(ChatColor.AQUA + "\n==========================================");
+                        player.sendMessage(ChatColor.AQUA + "\nALIASES:");
+                        player.sendMessage(ChatColor.AQUA + "\nSAA | SimpleAutoAnnouncer | Announcer");
+                        player.sendMessage(ChatColor.AQUA + "\n==========================================");
+                    }else if (args[0].equalsIgnoreCase("help")) {
+                        player.sendMessage(ChatColor.AQUA + "\n==========================================\n");
+                        player.sendMessage(ChatColor.AQUA + "SimpleAutoAnnouncer v1.0.0 by JAhimaz\n");
+                        player.sendMessage(ChatColor.AQUA + "/saa start");
+                        player.sendMessage(ChatColor.AQUA + "/saa stop");
+                        player.sendMessage(ChatColor.AQUA + "/saa reload");
+                        player.sendMessage(ChatColor.AQUA + "/saa help");
+                        player.sendMessage(ChatColor.AQUA + "/saa aliases");
+                        player.sendMessage(ChatColor.AQUA + "==========================================\n");
+                    }
+                }else{
+                    player.sendMessage("Invalid Command? Do /saa help for Commands");
+                }
+            }
+        }
+        return true;
+    }
+
+    private void reloadPlugin(){
+        if(announcer != null){
+            announcer.stopAnnouncer();
+            announcer = null;
+        }
+        reloadConfig();
+        if(getConfig().getBoolean("plugin-enabled")){
+            setupAnnouncer();
+            startupPrompt();
+            announcer.startAnnouncer();
+        }
     }
 }

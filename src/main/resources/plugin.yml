@@ -5,3 +5,8 @@ api-version: 1.13
 load: STARTUP
 authors: [ItsJustDsAW]
 description: Simple, Fast & Efficient Auto Announcer
+commands:
+  simpleautoannouncer:
+    description: Opens The Links Menu
+    usage: /<command>
+    aliases: [saa, announcer]
