@@ -2,19 +2,18 @@ package com.itsjustdsaw.simpleautoannouncer.announcer;
 
 import com.itsjustdsaw.simpleautoannouncer.SimpleAutoAnnouncer;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.scheduler.BukkitRunnable;
 
 import java.util.List;
 import java.util.Random;
 
 public class Announcement extends BukkitRunnable {
-    private List<String> messages;
+    private List<Message> messages;
     private boolean isEnabled;
     private SimpleAutoAnnouncer plugin;
     private int counter;
 
-    public Announcement(SimpleAutoAnnouncer instance, List<String> messages, boolean isEnabled) {
+    public Announcement(SimpleAutoAnnouncer instance, List<Message> messages, boolean isEnabled) {
         this.plugin = instance;
         this.messages = messages;
         this.isEnabled = isEnabled;
@@ -30,19 +29,28 @@ public class Announcement extends BukkitRunnable {
 
         //Announcer Code
         if(plugin.getConfig().getBoolean("randomised")){
-            plugin.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("announcer-prefix") + " " +  getRandomString(messages)));
+            Message message = getRandomMessage(messages);
+            printMessage(message);
         }else{
             if(counter == (messages.size())){
                 counter = 0;
             }
-            plugin.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("announcer-prefix") + " " +  messages.get(counter)));
+            Message message = messages.get(counter);
+            printMessage(message);
             counter++;
         }
     }
 
-    public String getRandomString(List<String> strings) {
+    private void printMessage(Message message) {
+        List<String> messageSentences = message.getSentences();
+        for(String sentence : messageSentences){
+            plugin.getServer().broadcastMessage(ChatColor.translateAlternateColorCodes('&', sentence));
+        }
+    }
+
+    public Message getRandomMessage(List<Message> strings) {
         Random rand = new Random();
-        String randomElement = strings.get(rand.nextInt(strings.size()));
+        Message randomElement = strings.get(rand.nextInt(strings.size()));
         return randomElement;
     }
 }

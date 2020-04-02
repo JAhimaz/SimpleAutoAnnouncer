@@ -1,6 +1,7 @@
 package com.itsjustdsaw.simpleautoannouncer;
 
 import com.itsjustdsaw.simpleautoannouncer.announcer.Announcer;
+import com.itsjustdsaw.simpleautoannouncer.announcer.Message;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public final class SimpleAutoAnnouncer extends JavaPlugin {
 
-    private List<String> messages = new ArrayList<String>();
+    private List<Message> messages = new ArrayList<Message>();
     private Announcer announcer;
 
     @Override
@@ -39,8 +40,9 @@ public final class SimpleAutoAnnouncer extends JavaPlugin {
     }
 
     private void setupAnnouncer(){
-        //Fetch The Messages From Config
-        messages = getConfig().getStringList("Messages");
+        for(String key : getConfig().getConfigurationSection("Messages").getKeys(false)){
+            messages.add(new Message(key, getConfig().getStringList("Messages." + key)));
+        }
         //Create The Announcer Object
         announcer = new Announcer(this, messages);
     }

@@ -11,14 +11,14 @@ import java.util.List;
 
 public class Announcer{
 
-    private List<String> messages;
+    private List<Message> messages;
     private SimpleAutoAnnouncer plugin;
     private FileConfiguration config;
     private String prefix;
     private int delay;
     public BukkitTask curr;
 
-    public Announcer(SimpleAutoAnnouncer instance, List<String> messageList) {
+    public Announcer(SimpleAutoAnnouncer instance, List<Message> messageList) {
         this.plugin = instance;
         this.messages = messageList;
         this.config = this.plugin.getConfig();

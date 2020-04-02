@@ -23,8 +23,13 @@ randomised: true
 
 # Messages
 Messages:
-  - "&bTest Message 1"
-  - "&dTest Message 2"
-  - "&eTest Message 3"
+  testmessage1:
+    - "L1"
+    - "L2"
+    - "L3"
+  testmessage2:
+    - "T1"
+    - "T2"
+    - "T3"
 
 # =================== END OF CONFIG =====================
